@@ -1,5 +1,7 @@
 const Timestamp = new Date().getTime()
 module.exports = {
+    //打包后相对目录
+    publicPath: process.env.NODE_ENV === 'production' ? '././' : '/',
     chainWebpack: config => {
         config.plugin('html').tap(args => {
             args[0].title = 'noah-boot-ui' //这个是网站标题
@@ -14,7 +16,6 @@ module.exports = {
             // 		@import "@/assets/style/base.scss";
             // 	`,
             // },
-
             //这只主题样式，修改此文件后需要重新启动，
             less: {
                 lessOptions: {
@@ -33,8 +34,7 @@ module.exports = {
         },
     },
     productionSourceMap: false,
-    //打包后相对目录
-    publicPath: process.env.NODE_ENV === 'production' ? '././' : './',
+
     configureWebpack: {
         //每次打包后生成的js携带时间戳
         output: {

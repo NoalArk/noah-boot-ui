@@ -7,10 +7,11 @@ const app = createApp(App)
 // import 'ant-design-vue/dist/antd.css'
 //
 import 'ant-design-vue/dist/antd.less';
-import {Button, DatePicker} from 'ant-design-vue'
+import {Button,Layout,Menu} from 'ant-design-vue'
 
 app.use(Button)
-    .use(DatePicker)
+    .use(Layout)
+    .use(Menu)
     .use(store)
     .use(router)
     .mount('#app')
